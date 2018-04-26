@@ -1,0 +1,43 @@
+<section id="info" class = "flink">
+    <header>
+        <hgroup>
+            <h1>Salon</h1>
+            <h2>Ikeda Salon</h2>
+        </hgroup>
+        <a href="https://github.com/soulwire/FoldScroll/zipball/master">Download</a>
+        <a href="https://github.com/soulwire/FoldScroll">View on Github</a>
+    </header>
+</section>
+<section class="quotes"></section>
+<script src="foldscroll.js"></script>
+<script src="quotes.js"></script>
+<script type="text/javascript">
+
+    $(function() {
+
+        var limit = 15;
+        var $container = $( '.quotes' );
+
+        // Populate
+        for ( var i = 0, n = Math.min( limit, quotes.length ); i < n; i++ ) {
+
+            $container.append(
+                '<article>' +
+                    '<p id = "'+ i +'">' + quotes[i].quote + '</p>' +
+                    '<em>' + quotes[i].author + '</em>' +
+                '</article>');
+
+            $('.flink').append(
+                '<aside>' +
+                    '<p>Box Link: <a href="#' + i + '">'+ i +'</a></p>' +
+                '</aside>');
+        }
+
+        // Call the foldscroll plugin
+        $container.foldscroll({
+            perspective: 900,
+            margin: '220px'
+        });
+    });
+
+</script>
