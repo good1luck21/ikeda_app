@@ -15,7 +15,7 @@
 
     $(function() {
 
-        var limit = 15;
+        var limit = 5;
         var $container = $( '.quotes' );
 
         // Populate
@@ -24,14 +24,15 @@
             $container.append(
                 '<article>' +
                     '<p id = "'+ i +'">' + quotes[i].quote + '</p>' +
-                    '<em>' + quotes[i].author + '</em>' +
+                    quotes[i].author +
                 '</article>');
 
-            $('.flink').append(
-                '<aside>' +
-                    '<p>Box Link: <a href="#' + i + '">'+ i +'</a></p>' +
-                '</aside>');
-        }
+
+            // $('.flink').append(
+            //     '<aside>' +
+            //         '<p>Box Link: <a href="#' + i + '">'+ i +'</a></p>' +
+            //     '</aside>');
+        };
 
         // Call the foldscroll plugin
         $container.foldscroll({

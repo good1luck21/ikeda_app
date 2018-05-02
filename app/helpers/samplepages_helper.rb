@@ -1,0 +1,2 @@
+module SamplepagesHelper
+end

@@ -1,7 +1,7 @@
 var quotes = [
     {
-        "author": "This is Lesson",
-        "quote": "Ikeda Salon"
+        "author": "誰にも親しみやすいサロンやプランを提供しています！",
+        "quote": "池田サロンの紹介ベージ"
     },
     {
         "author": "This is Sample",
