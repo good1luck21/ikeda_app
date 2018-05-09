@@ -15,24 +15,36 @@
 
     $(function() {
 
-        var limit = 5;
+        var limit = 15;
         var $container = $( '.quotes' );
-
         // Populate
         for ( var i = 0, n = Math.min( limit, quotes.length ); i < n; i++ ) {
+            // 以下から条件分けを行い、ページの表示を切り替える。
+            if(i == 1){
+              $container.append(
+                  '<article>' +
+                      '<p id = "'+ i +'">' + quotes[i].quote + '</p>' +
+                      '<em>' + quotes[i].author + '</em>' +
+                      '<img src = "../assets/rails.png" style="height:60px; width:60px;">' +
+                  '</article>'
 
-            $container.append(
-                '<article>' +
-                    '<p id = "'+ i +'">' + quotes[i].quote + '</p>' +
-                    quotes[i].author +
-                '</article>');
+                );
+            }else{
+              $container.append(
+                  '<article>' +
+                      '<p id = "'+ i +'">' + quotes[i].quote + '</p>' +
+                      '<em>' + quotes[i].author + '</em>' +
+                  '</article>'
+
+                );
+            }
 
 
-            // $('.flink').append(
-            //     '<aside>' +
-            //         '<p>Box Link: <a href="#' + i + '">'+ i +'</a></p>' +
-            //     '</aside>');
-        };
+            $('.flink').append(
+                '<aside>' +
+                    '<p>Box Link: <a href="#' + i + '">'+ i +'</a></p>' +
+                '</aside>');
+        }
 
         // Call the foldscroll plugin
         $container.foldscroll({
